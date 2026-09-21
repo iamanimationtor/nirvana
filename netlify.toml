@@ -1,0 +1,12 @@
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+# This App Router application uses SSR, route handlers, and Next's proxy.
+# The runtime adapter creates the Netlify server and edge functions that serve
+# those routes; publishing `.next` alone only uploads build artifacts.
+[[plugins]]
+  package = "@netlify/plugin-nextjs"

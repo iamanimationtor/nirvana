@@ -1,0 +1,1 @@
+import Link from"next/link";export default function NotFound(){return <div className="admin-card empty"><h2>مورد درخواستی پیدا نشد</h2><p>ممکن است حذف شده یا نشانی اشتباه باشد.</p><Link className="btn btn-primary" href="/admin">بازگشت به داشبورد</Link></div>}

@@ -1,0 +1,5 @@
+import{db,isDatabaseConfigured}from"@/db";import{settings}from"@/db/schema";
+const defaults={"store.name":"نیروانا ۳دی","store.email":"","store.phone":"","store.currency":"تومان","inventory.defaultThreshold":5,"orders.shippingFee":0,"seo.defaultTitle":"نیروانا ۳دی | Nirvana 3D — گالری هنر سه‌بعدی","seo.defaultDescription":"گالری و کارگاه چاپ سه‌بعدی نیروانا؛ هنر سه‌بعدی برای دنیای واقعی."}as const;
+export type StoreSettings=Record<keyof typeof defaults,string|number>;
+export async function getStoreSettings():Promise<StoreSettings>{const result:{[key:string]:string|number}={...defaults};if(!isDatabaseConfigured)return result as StoreSettings;try{const rows=await db.select().from(settings);for(const row of rows)if(row.key in defaults&&(typeof row.value==="string"||typeof row.value==="number"))result[row.key]=row.value}catch{}return result as StoreSettings}
+export function numericSetting(value:unknown,fallback=0,max=100_000_000){const n=Number(value);return Number.isInteger(n)&&n>=0&&n<=max?n:fallback}

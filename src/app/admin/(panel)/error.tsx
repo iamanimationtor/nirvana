@@ -1,0 +1,1 @@
+"use client";export default function ErrorPage({reset}:{error:Error;reset:()=>void}){return <div className="admin-card empty"><h2>بارگذاری این بخش ممکن نشد</h2><p>لطفاً دوباره تلاش کنید.</p><button className="btn btn-primary" onClick={reset}>تلاش دوباره</button></div>}

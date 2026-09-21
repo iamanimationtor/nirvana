@@ -1,0 +1,1 @@
+import{requireAdmin}from"@/lib/admin-auth";import{ChangePasswordForm}from"@/components/admin/ChangePasswordForm";export default async function ChangePassword(){await requireAdmin();return <><div className="page-head"><div><h1>تغییر رمز عبور</h1><p>پس از تغییر رمز، همه نشست‌های مدیریتی بسته می‌شوند.</p></div></div><ChangePasswordForm/></>}

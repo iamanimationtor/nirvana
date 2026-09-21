@@ -1,0 +1,1 @@
+export default function Loading(){return <div className="stat-grid" aria-label="در حال بارگذاری"><div className="admin-skeleton"/><div className="admin-skeleton"/><div className="admin-skeleton"/><div className="admin-skeleton"/></div>}
